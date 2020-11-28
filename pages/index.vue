@@ -1,9 +1,15 @@
 <template>
-  <div class="container">
-    <div v-for="(movie, index) in movies" :key="index">
-        <img class="img-fluid" :src="movie.poster_path && `http://image.tmdb.org/t/p/w500/${movie.poster_path}`" :alt="movie.poster_path">
-        <p class="text-justify">{{movie.title}}</p> 
-        <p class="text-monospace">{{movie.release_date}}</p>        
+  <div class="mt-4">
+    <div class="container">
+      <h1>Movies</h1>
+      <div class="card-columns">
+        <div class="card" v-for="movie in movies" :key="movie.key">
+          <img class="card-img" :src="movie.poster_path && `http://image.tmdb.org/t/p/w500/${movie.poster_path}`" :alt="movie.poster_path">
+          <div class="card-body">
+            <p class="card-text">{{movie.title}}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -36,8 +42,10 @@ export default {
 </script>
 
 <style>
-.container {
+.container-fluid {
   display: flex;
   flex-wrap: wrap;
+}
+.img-fluid {
 }
 </style>
