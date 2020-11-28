@@ -46,6 +46,4 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
-.img-fluid {
-}
 </style>
